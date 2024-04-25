@@ -1,0 +1,30 @@
+        {% extends 'usuarios/base.html' %}
+        {% block conteudo %}
+        
+        <div style="display: flex; justify-content: center;">
+        <form action="{% url 'listagem_usuarios' %}" method="post">
+          
+          {% csrf_token %}
+            
+            <label for="nome">Nome do Cliente:</label>
+            <input type="text" name="nome" required />
+            <label for="profissional">Profissional:</label>
+            <select  name="profissional" required>
+              <option value="profissional_1">Profissional 1</option>
+              <option value="profissional_2">Profissional 2</option>
+              <option value="profissional_3">Profissional 3</option>
+            </select>
+          
+            <label for="cabelo">Cabelo:</label>
+            <input type="number" name="cabelo" min="1" max="10" required />
+        
+            <label for="barba">Barba:</label>
+            <input type="number" name="barba" min="1" max="10" required />
+          
+            <label for="pagamento">Data/Pagamento:</label>
+            <input type="date" name="pagamento" required>
+
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+          {% endblock %}

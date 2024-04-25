@@ -1,0 +1,128 @@
+  body {
+    background: linear-gradient(to bottom, #232526 0%, #414345 100%);
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .navbar-light {
+    background-image: linear-gradient(to bottom, #232526 0%, #414345 100%);
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-light .btn {
+    border-radius: 25px;
+    margin: 5px;
+  }
+  
+  .navbar-light .btn-group {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-light .btn-group > .btn {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-light .btn-group > .btn:first-child {
+    margin-left: 15px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  
+  .navbar-light .btn-group > .btn:last-child {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  
+  .navbar-light .btn-info {
+    background-image: linear-gradient(to bottom, #ffc300 0%, #ff8c00 100%);
+    color: #110e0e;
+  }
+  
+  .navbar-light .btn-info:hover {
+    background-image: linear-gradient(to bottom, #ffa000 0%, #ff6d00 100%);
+  }
+  
+  .navbar-brand {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-brand img {
+    height: 50px;
+    width: auto;
+  }
+
+  .navbar-light .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .logo-container {
+    position: absolute;
+    top: 55px; /* adjust the top position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .logo-container img {
+    height: auto;
+    width: 150px; /* adjust the logo width as needed */
+  }
+
+  form {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  label {
+    display: block;
+    text-align: left;
+    width: 100%;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select,
+  input[type="date"] {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
