@@ -1,46 +1,41 @@
-const tableBody = document.getElementById('table-body');
-const filters = {
-  nome: document.getElementById('nomeFilter'),
-  profissional: document.getElementById('profissionalFilter'),
-  cabelo: document.getElementById('cabeloFilter'),
-  barba: document.getElementById('barbaFilter'),
-  pagamento: document.getElementById('pagamentoFilter'),
-};
-
-
-function filterTable() {
+document.addEventListener("DOMContentLoaded", function() {
+  const nomeFilter = document.getElementById("nomeFilter");
+  const profissionalFilter = document.getElementById("profissionalFilter");
+  const cabeloFilter = document.getElementById("cabeloFilter");
+  const barbaFilter = document.getElementById("barbaFilter");
+  const pagamentoFilter = document.getElementById("pagamentoFilter");
   
-  const nomeFilter = filters.nome.value.toLowerCase();
-  const profissionalFilter = filters.profissional.value.toLowerCase();
-  const cabeloFilter = filters.cabelo.value.toLowerCase();
-  const barbaFilter = filters.barba.value.toLowerCase();
-  const pagamentoFilter = filters.pagamento.value.toLowerCase();
-
+  const filterTable = () => {
+      const nomeValue = nomeFilter.value.toUpperCase();
+      const profissionalValue = profissionalFilter.value.toUpperCase();
+      const cabeloValue = cabeloFilter.value.toUpperCase();
+      const barbaValue = barbaFilter.value.toUpperCase();
+      const pagamentoValue = pagamentoFilter.value.toUpperCase();
+      
+      const rows = document.querySelectorAll("#table-body tr");
+      
+      rows.forEach(row => {
+          const nomeCell = row.children[1];
+          const profissionalCell = row.children[2];
+          const cabeloCell = row.children[3];
+          const barbaCell = row.children[4];
+          const pagamentoCell = row.children[5];
+          
+          if (nomeCell.textContent.toUpperCase().includes(nomeValue) &&
+              profissionalCell.textContent.toUpperCase().includes(profissionalValue) &&
+              cabeloCell.textContent.toUpperCase().includes(cabeloValue) &&
+              barbaCell.textContent.toUpperCase().includes(barbaValue) &&
+              pagamentoCell.textContent.toUpperCase().includes(pagamentoValue)) {
+                  row.style.display = "";
+              } else {
+                  row.style.display = "none";
+              }
+      });
+  };
   
-  for (let i = 0; i < tableBody.rows.length; i++) {
-    const row = tableBody.rows[i];
-
-    
-    let match = true;
-    for (const filter in filters) {
-      if (filters[filter].value !== '') {
-        const cell = row.cells[filters[filter].index];
-        if (cell.textContent.toLowerCase().indexOf(filters[filter].value) === -1) {
-          match = false;
-          break;
-        }
-      }
-    }
-
-    
-    row.style.display = match ? '' : 'none';
-  }
-}
-
-
-for (const filter in filters) {
-  filters[filter].addEventListener('input', filterTable);
-}
-
-
-filterTable();
+  nomeFilter.addEventListener("keyup", filterTable);
+  profissionalFilter.addEventListener("keyup", filterTable);
+  cabeloFilter.addEventListener("keyup", filterTable);
+  barbaFilter.addEventListener("keyup", filterTable);
+  pagamentoFilter.addEventListener("keyup", filterTable);
+});
